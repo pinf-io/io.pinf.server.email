@@ -1,0 +1,40 @@
+{
+  "name": "io.pinf.server.email",
+  "version": "0.0.0",
+  "private": true,
+  "pm": "npm",
+  "dependencies": {
+    "nodemailer": "~1.3.0",
+    "nodemailer-smtp-transport": "~0.1.0",
+    "smi.cli": "0.x"
+  },
+  "devDependencies": {
+    "request": "~2.34.0",
+    "mocha": "~1.18.2"
+  },
+  "scripts": {
+    "install": "./node_modules/.bin/smi install",
+    "test": "./node_modules/.bin/mocha --reporter list test/*.js"
+  },
+  "upstream": {
+    "packages": {
+      "top": [
+        "../*",
+        "../../*",
+        "../../../../*"
+      ]
+    }
+  },
+  "mappings": {
+    "io.pinf.server.www": "top/io.pinf.server.www"
+  },
+  "config": {
+    "smi.cli": {
+      "packagesDirectory": "node_modules"
+    },
+    "pio.deploy.converter": {
+      "scriptsPath": "scripts.pio",
+      "name": "nodejs-server"
+    }
+  }
+}
